@@ -96,6 +96,10 @@ module.exports = function (RED) {
             case "charger_details":
               node.genericCall("/chargers/" + node.charger + "/details");
             break;
+            
+            case "charger_toggle":
+              node.genericCall("/chargers/" + node.charger + "/commands/toggle_charging");
+            break;
 
             case "charger_state":
               node.genericCall("/chargers/" + node.charger + "/state", false).then( json => {
